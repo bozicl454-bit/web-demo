@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPG Pčelarstvo Tomislav Antolčić — Domaći proizvodi iz Velike Gorice</title>
-<meta name="description" content="OPG Pčelarstvo Tomislav Antolčić iz Velike Gorice proizvodi domaći med i domaće proizvode izravno s obiteljskog gospodarstva u Zagrebačkoj županiji.">
+<title>OPG Pčelarstvo Tomislav Antolčić — Domaći med iz Velike Gorice</title>
+<meta name="description" content="OPG Pčelarstvo Tomislav Antolčić iz Velike Gorice proizvodi domaći med i pčelinje proizvode, izravno s obiteljskog pčelinjaka u Zagrebačkoj županiji.">
 
 <!-- Google Fonts: Fraunces (naslovi) + Work Sans (tijelo teksta) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,35 +224,52 @@
   }
 
   /* ============================================
-     5. PLACEHOLDER SLIKE (duotone maslinasti blokovi)
-     Koriste se dok stvarne fotografije nisu dostupne
+     5. VIZUALNI BLOKOVI (dizajnirane pozadine s ikonama)
+     Koriste se dok stvarne fotografije OPG-a nisu dostupne —
+     namjerno dizajniran element, spreman za zamjenu pravim fotografijama.
      ============================================ */
-  .img-placeholder {
+  .visual-block {
     background: linear-gradient(135deg, #4A5A3B 0%, #3E4B31 55%, #2E3825 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(246, 243, 236, 0.55);
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
     overflow: hidden;
     min-height: 220px;
   }
 
-  .img-placeholder::before {
+  /* Suptilna točkasta tekstura — guarantirano ispravno tajlanje (čisti CSS, bez SVG uzorka) */
+  .visual-block::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.06), transparent 60%);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1.6px);
+    background-size: 20px 20px;
   }
 
-  .img-placeholder span {
+  .visual-block::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 28% 20%, rgba(255,255,255,0.10), transparent 60%);
+  }
+
+  .visual-block__icon {
     position: relative;
-    padding: 1rem;
+    width: 64px;
+    height: 64px;
+    color: rgba(246, 243, 236, 0.55);
+  }
+
+  .visual-block__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .visual-block--map .visual-block__icon {
+    width: 48px;
+    height: 48px;
   }
 
   /* ============================================
@@ -770,7 +787,7 @@
      ============================================ -->
 <header class="site-header" id="siteHeader">
   <div class="container site-header__inner">
-    <a href="#top" class="logo">OPG <span>Tomislav Antolčić</span></a>
+    <a href="#top" class="logo">OPG <span>Antolčić</span></a>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Otvori izbornik">
       <span class="nav-toggle__bar"></span>
@@ -795,19 +812,29 @@
        ============================================ -->
   <section class="hero" id="top">
     <div class="hero__content">
-      <span class="eyebrow">Obiteljski OPG · Velika Gorica</span>
-      <h1>Domaći proizvodi, izravno s našeg gospodarstva.</h1>
+      <span class="eyebrow">Obiteljsko pčelarstvo · Velika Gorica</span>
+      <h1>Domaći med, izravno s našeg pčelinjaka.</h1>
       <p class="hero__lede">
-        OPG Pčelarstvo Tomislav Antolčić proizvodi domaći med i domaće
-        proizvode u Velikoj Gorici— bez posrednika, izravno od nas do vas.
+        OPG Pčelarstvo Tomislav Antolčić proizvodi domaći med i pčelinje
+        proizvode u Velikoj Gorici — izravno od nas do vas, bez posrednika.
       </p>
       <div class="hero__ctas">
         <a href="#kontakt" class="btn btn--primary">Kontaktirajte nas</a>
         <a href="#proizvodi" class="btn btn--outline">Pogledajte proizvode</a>
       </div>
     </div>
-    <div class="hero__media img-placeholder" role="img" aria-label="Fotografija maslinika i polja OPG-a Pčelarstvo Tomislav Antolčić">
-      <span>Fotografija OPG-a<br>(placeholder)</span>
+    <div class="hero__media visual-block" aria-hidden="true">
+      <div class="visual-block__icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="24" cy="27" rx="9" ry="13"/>
+          <line x1="16" y1="21" x2="32" y2="21"/>
+          <line x1="15" y1="27" x2="33" y2="27"/>
+          <line x1="16" y1="33" x2="32" y2="33"/>
+          <circle cx="24" cy="12" r="5"/>
+          <path d="M14 19 C6 13, 2 21, 10 23"/>
+          <path d="M34 19 C42 13, 46 21, 38 23"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -816,16 +843,23 @@
        ============================================ -->
   <section class="section" id="o-nama">
     <div class="container about">
-      <div class="about__media img-placeholder" role="img" aria-label="Fotografija proizvodnje na OPG-u Pčelarstvo Tomislav Antolčić">
-        <span>Fotografija proizvodnje<br>(placeholder)</span>
+      <div class="about__media visual-block" aria-hidden="true">
+        <div class="visual-block__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6 C15 6 10 14 10 22 L10 40 L38 40 L38 22 C38 14 33 6 24 6 Z"/>
+            <line x1="10" y1="22" x2="38" y2="22"/>
+            <line x1="10" y1="30" x2="38" y2="30"/>
+            <rect x="20" y="34" width="8" height="6"/>
+          </svg>
+        </div>
       </div>
       <div class="about__text">
         <span class="eyebrow">O nama</span>
         <h2>Proizvodnja s pažnjom, izravno od nas do vas.</h2>
         <p>
-          OPG Pčelarstvo Tomislav Antolčić bavi se proizvodnjom domaćih poljoprivrednih proizvoda u Velikoj
-          Gorici, u Zagrebačkoj županiji. Naš cilj je jednostavan — ponuditi kvalitetne,
-          domaće proizvode izravno kupcima, bez nepotrebnih posrednika.
+          OPG Pčelarstvo Tomislav Antolčić bavi se proizvodnjom meda i pčelinjih proizvoda u Velikoj
+          Gorici, u Zagrebačkoj županiji. Naš cilj je jednostavan — ponuditi kvalitetan,
+          domaći med izravno kupcima, bez nepotrebnih posrednika.
         </p>
 
         <div class="about__facts">
@@ -835,7 +869,7 @@
           </div>
           <div class="fact">
             <div class="fact__label">Djelatnost</div>
-            <div class="fact__value">Proizvodnja domaćih poljoprivrednih proizvoda</div>
+            <div class="fact__value">Proizvodnja meda i pčelinjih proizvoda</div>
           </div>
         </div>
       </div>
@@ -853,35 +887,54 @@
       </div>
 
       <div class="product">
-        <div class="product__media img-placeholder" role="img" aria-label="Fotografija ekstra djevičanskog maslinovog ulja">
-          <span>Domaći med<br>(placeholder)</span>
+        <div class="product__media visual-block" aria-hidden="true">
+          <div class="visual-block__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 8 C24 8 14 22 14 30 C14 36.6 18.5 40 24 40 C29.5 40 34 36.6 34 30 C34 22 24 8 24 8 Z"/>
+            </svg>
+          </div>
         </div>
         <div class="product__text">
           <span class="product__number">01</span>
-          <h3 class="product__title"> Domaći med</h3>
-          <p>Med proizveden na našem gospodarstvu, dostupan izravno od proizvođača.</p>
+          <h3 class="product__title">Med</h3>
+          <p>Med proizveden na našem pčelinjaku u Velikoj Gorici, dostupan izravno od proizvođača.</p>
         </div>
       </div>
 
       <div class="product">
-        <div class="product__media img-placeholder" role="img" aria-label="Fotografija domaćeg meda">
-          <span>Propolis<br>(placeholder)</span>
+        <div class="product__media visual-block" aria-hidden="true">
+          <div class="visual-block__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="24,6 38,14 38,30 24,38 10,30 10,14"/>
+              <polygon points="24,14 31,18 31,26 24,30 17,26 17,18"/>
+            </svg>
+          </div>
         </div>
         <div class="product__text">
           <span class="product__number">02</span>
-          <h3 class="product__title">Propolis</h3>
-          <p>Propolis proizveden na našem gospodarstvu, dostupan izravno od proizvođača.</p>
+          <h3 class="product__title">Proizvodi od meda</h3>
+          <p>Uz med, na našem pčelinjaku nastaju i drugi pčelinji proizvodi — detalje rado pojasnimo na upit.</p>
         </div>
       </div>
 
       <div class="product">
-        <div class="product__media img-placeholder" role="img" aria-label="Fotografija domaćih proizvoda OPG-a Pčelarstvo Tomislav Antolčić">
-          <span>Domaći proizvodi<br>(placeholder)</span>
+        <div class="product__media visual-block" aria-hidden="true">
+          <div class="visual-block__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="24" r="5"/>
+              <path d="M24 19 C24 12 18 8 18 8 C18 8 22 14 24 19 Z"/>
+              <path d="M24 19 C24 12 30 8 30 8 C30 8 26 14 24 19 Z"/>
+              <path d="M29 24 C36 24 40 18 40 18 C40 18 34 22 29 24 Z"/>
+              <path d="M29 24 C36 24 40 30 40 30 C40 30 34 26 29 24 Z"/>
+              <path d="M19 24 C12 24 8 18 8 18 C8 18 14 22 19 24 Z"/>
+              <path d="M19 24 C12 24 8 30 8 30 C8 30 14 26 19 24 Z"/>
+            </svg>
+          </div>
         </div>
         <div class="product__text">
           <span class="product__number">03</span>
-          <h3 class="product__title">Domaći proizvodi</h3>
-          <p>Uz med, nudimo i med s dodacima te med za poboljšanje imuniteta.</p>
+          <h3 class="product__title">Ostali proizvodi</h3>
+          <p>Ovisno o sezoni, ponuda može uključivati i druge proizvode s pčelinjaka — javite nam se za trenutnu ponudu.</p>
         </div>
       </div>
     </div>
@@ -893,14 +946,14 @@
   <section class="section" id="zasto-mi">
     <div class="container">
       <div class="section-intro">
-        <span class="eyebrow">Zašto OPG Pčelarstvo Tomislav Antolčić</span>
+        <span class="eyebrow">Zašto mi</span>
         <h2>Izravno od proizvođača do vas</h2>
       </div>
 
       <div class="values">
         <div class="value-item">
-          <h3 class="value-item__title">Domaća proizvodnja</h3>
-          <p>Naši proizvodi dolaze izravno s OPG-a u Velikoj Gorici, bez posrednika.</p>
+          <h3 class="value-item__title">Domaća proizvodnja meda</h3>
+          <p>Med dolazi izravno s našeg pčelinjaka u Velikoj Gorici, bez posrednika.</p>
         </div>
         <div class="value-item">
           <h3 class="value-item__title">Direktan kontakt s proizvođačem</h3>
@@ -923,9 +976,22 @@
       <h2>Velika Gorica, Zagrebačka županija</h2>
       <p>Naše gospodarstvo nalazi se u Velikoj Gorici, u Zagrebačkoj županiji.</p>
 
-      <div class="location__map img-placeholder" role="img" aria-label="Karta lokacije OPG-a Pčelarstvo Tomislav Antolčić u Velikoj Gorici">
-        <span>Karta lokacije<br>(placeholder)</span>
+      <div class="location__map visual-block visual-block--map" aria-hidden="true">
+        <div class="visual-block__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6 C16 6 10 12 10 20 C10 30 24 42 24 42 C24 42 38 30 38 20 C38 12 32 6 24 6 Z"/>
+            <circle cx="24" cy="20" r="5"/>
+          </svg>
+        </div>
       </div>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Velika+Gorica%2C+Zagreba%C4%8Dka+%C5%BEupanija"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--outline"
+        style="margin-top: 1.5rem;"
+      >Kako do nas</a>
     </div>
   </section>
 
@@ -966,6 +1032,7 @@
         <div class="contact-info__item">
           <div class="fact__label">Telefon</div>
           <a href="tel:+385991234567">+385 99 123 4567</a>
+          <a href="tel:+385991234567" class="btn btn--outline" style="margin-top: 0.75rem; display: inline-block;">Nazovite nas</a>
         </div>
         <div class="contact-info__item">
           <div class="fact__label">Email</div>
@@ -977,6 +1044,9 @@
             Velika Gorica, Zagrebačka županija
           </div>
         </div>
+        <p class="form-note" style="margin-top: 0.5rem;">
+          Kontakt podaci prikazani ovdje bit će zamijenjeni stvarnim podacima OPG-a prije objave stranice.
+        </p>
       </div>
     </div>
   </section>
@@ -990,8 +1060,8 @@
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <a href="#top" class="logo">OPG <span>Pčelarstvo Tomislav Antolčić</span></a>
-        <p>Domaći poljoprivredni proizvodi iz Velike Gorice, Zagrebačka županija.</p>
+        <a href="#top" class="logo">OPG <span>Antolčić</span></a>
+        <p>Domaći med i pčelinji proizvodi iz Velike Gorice, Zagrebačka županija.</p>
       </div>
 
       <div class="footer__contact">
