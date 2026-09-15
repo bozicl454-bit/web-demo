@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPG Pčelarstvo Tomislav Antolčić — Domaći proizvodi iz Velike Gorice</title>
+<meta name="description" content="OPG Pčelarstvo Tomislav Antolčić iz Velike Gorice proizvodi domaći med i domaće proizvode izravno s obiteljskog gospodarstva u Zagrebačkoj županiji.">
+
+<!-- Google Fonts: Fraunces (naslovi) + Work Sans (tijelo teksta) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     1. RESET I OSNOVNE POSTAVKE
+     ============================================ */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  /* ============================================
+     2. DIZAJN TOKENI (CSS varijable)
+     ============================================ */
+  :root {
+    /* Boje */
+    --color-bg: #F6F3EC;
+    --color-bg-alt: #F0ECE1;
+    --color-text: #28241E;
+    --color-text-muted: #5B5648;
+    --color-primary: #3E4B31;
+    --color-primary-dark: #313C27;
+    --color-accent: #B8862E;
+    --color-line: #E2DCCD;
+    --color-dark: #1E2118;
+    --color-dark-text: #E9E5D8;
+
+    /* Tipografija */
+    --font-heading: 'Newsreader', Georgia, serif;
+    --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Razmaci */
+    --section-padding-y: 4.5rem;
+    --container-padding-x: 1.25rem;
+    --max-width: 1140px;
+
+    /* Ostalo */
+    --radius: 5px;
+    --transition: 0.2s ease;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============================================
+     3. UTILITY KLASE
+     ============================================ */
+  .container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+  }
+
+  .section {
+    padding-block: var(--section-padding-y);
+  }
+
+  .section--alt {
+    background-color: var(--color-bg-alt);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-text);
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--color-text-muted);
+  }
+
+  .section-intro {
+    max-width: 42rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Skip link za accessibility */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    z-index: 200;
+    border-radius: 0 0 var(--radius) 0;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  /* Vidljivo samo za čitače ekrana */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* ============================================
+     4. GUMBI (CTA)
+     ============================================ */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius);
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    text-align: center;
+  }
+
+  .btn--primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--color-primary);
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus-visible {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+  }
+
+  .btn--outline {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+  }
+
+  .btn--outline:hover,
+  .btn--outline:focus-visible {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .btn--outline-light {
+    background-color: transparent;
+    color: var(--color-dark-text);
+    border: 1px solid rgba(233, 229, 216, 0.5);
+  }
+
+  .btn--outline-light:hover,
+  .btn--outline-light:focus-visible {
+    background-color: var(--color-dark-text);
+    color: var(--color-dark);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* ============================================
+     5. PLACEHOLDER SLIKE (duotone maslinasti blokovi)
+     Koriste se dok stvarne fotografije nisu dostupne
+     ============================================ */
+  .img-placeholder {
+    background: linear-gradient(135deg, #4A5A3B 0%, #3E4B31 55%, #2E3825 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(246, 243, 236, 0.55);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    min-height: 220px;
+  }
+
+  .img-placeholder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.06), transparent 60%);
+  }
+
+  .img-placeholder span {
+    position: relative;
+    padding: 1rem;
+  }
+
+  /* ============================================
+     6. HEADER / NAVIGACIJA
+     ============================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
+
+  .site-header.is-scrolled {
+    background-color: var(--color-bg);
+    box-shadow: 0 1px 0 var(--color-line);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.1rem;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .logo span {
+    color: var(--color-accent);
+  }
+
+  /* Hamburger gumb (mobile) */
+  /* FIX (HIGH #2): min-width/min-height 44px = usklađeno s WCAG 2.5.5 touch target smjernicama */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    z-index: 110;
+  }
+
+  .nav-toggle__bar {
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobilni izbornik: full-screen overlay */
+  .primary-nav {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition);
+    z-index: 105;
+  }
+
+  .primary-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .primary-nav__link {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+  }
+
+  .primary-nav__cta {
+    margin-top: 1rem;
+  }
+
+  /* FIX (HIGH #3): scroll-margin-top kompenzira sticky header kod klika na sidrene linkove,
+     tako da naslov sekcije nije skriven iza headera nakon skrolanja */
+  #o-nama,
+  #proizvodi,
+  #zasto-mi,
+  #lokacija,
+  #kontakt {
+    scroll-margin-top: 80px;
+  }
+
+  /* ============================================
+     7. HERO
+     ============================================ */
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__media {
+    height: 46vh;
+    min-height: 280px;
+  }
+
+  .hero__content {
+    padding: 2.5rem var(--container-padding-x) 3rem;
+  }
+
+  .hero__lede {
+    font-size: 1.05rem;
+    max-width: 32rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  /* ============================================
+     8. O NAMA
+     ============================================ */
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .about__media {
+    height: 260px;
+  }
+
+  .about__facts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .fact__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .fact__value {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+  }
+
+  /* ============================================
+     9. PROIZVODI (uredničke redove, ne kartice)
+     ============================================ */
+  .product {
+    display: flex;
+    flex-direction: column;
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .product:first-of-type {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .product__media {
+    height: 220px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product__number {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .product__title {
+    margin-bottom: 0.6rem;
+  }
+
+  /* ============================================
+     10. ZAŠTO MI (uredničke, bez kartica/ikona)
+     ============================================ */
+  .values {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .value-item {
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .value-item:last-child {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .value-item__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ============================================
+     11. LOKACIJA
+     ============================================ */
+  .location__map {
+    height: 240px;
+    margin-top: 2rem;
+  }
+
+  /* ============================================
+     12. KONTAKT
+     ============================================ */
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  /* FIX (CRITICAL #1): width: 100% — bez ovoga polja padaju na default
+     browser širinu (~150-180px) umjesto da prate širinu kontejnera */
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.7rem 0.2rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-text-muted);
+    color: var(--color-text);
+    transition: border-color var(--transition);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-primary);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .contact-form .btn {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .contact-info__item .fact__label {
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-info__item a {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+  }
+
+  .contact-info__item a:hover {
+    color: var(--color-primary);
+  }
+
+  .form-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ============================================
+     13. FOOTER
+     ============================================ */
+  .site-footer {
+    background-color: var(--color-dark);
+    color: var(--color-dark-text);
+    padding-block: 3rem 1.5rem;
+  }
+
+  .footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(233, 229, 216, 0.15);
+  }
+
+  .footer__brand .logo {
+    color: var(--color-dark-text);
+  }
+
+  .footer__brand p {
+    color: rgba(233, 229, 216, 0.65);
+    margin-top: 0.5rem;
+    max-width: 26rem;
+  }
+
+  .footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer__contact a {
+    color: var(--color-dark-text);
+  }
+
+  .footer__contact a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer__bottom {
+    padding-top: 1.5rem;
+    font-size: 0.78rem;
+    color: rgba(233, 229, 216, 0.5);
+  }
+
+  /* ============================================
+     14. TABLET / DESKTOP — od 640px
+     ============================================ */
+  @media (min-width: 640px) {
+    :root {
+      --section-padding-y: 6rem;
+    }
+
+    h1 { font-size: 2.7rem; }
+    h2 { font-size: 2rem; }
+
+    .hero__ctas .btn { min-width: 200px; }
+  }
+
+  /* ============================================
+     15. DESKTOP — od 900px
+     ============================================ */
+  @media (min-width: 900px) {
+    :root {
+      --container-padding-x: 2rem;
+      /* Kompaktniji vertikalni ritam na desktopu (tablet ispod 900px zadržava --section-padding-y: 6rem) */
+      --section-padding-y: 5rem;
+      /* Bolje iskorištenje širine na velikim ekranima */
+      --max-width: 1220px;
+    }
+
+    h1 { font-size: 3.4rem; }
+    h2 { font-size: 2.2rem; }
+
+    /* Navigacija desktop */
+    .nav-toggle { display: none; }
+
+    .primary-nav {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      flex-direction: row;
+      background: transparent;
+      gap: 2.25rem;
+      inset: auto;
+    }
+
+    .primary-nav__link {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .primary-nav__cta {
+      margin-top: 0;
+    }
+
+    /* Hero — asimetrični dvostupčani layout */
+    .hero {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .hero__content {
+      flex: 0 0 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 3.5rem;
+    }
+
+    .hero__media {
+      flex: 0 0 45%;
+      height: auto;
+      min-height: 420px;
+    }
+
+    /* O nama — dvostupčano, naizmjenično */
+    .about {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .about__media {
+      flex: 0 0 42%;
+      height: 380px;
+    }
+
+    .about__text {
+      flex: 1;
+    }
+
+    /* Proizvodi — naizmjenični redovi slika/teksta */
+    .product {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      padding-block: 2.25rem;
+    }
+
+    .product__media {
+      flex: 0 0 45%;
+      height: 320px;
+      margin-bottom: 0;
+    }
+
+    .product__text {
+      flex: 1;
+    }
+
+    .product:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* Kontakt — dvostupčano */
+    .contact {
+      flex-direction: row;
+      gap: 3.5rem;
+    }
+
+    .contact-form {
+      flex: 1.1;
+    }
+
+    .contact-info {
+      flex: 0.9;
+      border-top: none;
+      padding-top: 0;
+      justify-content: center;
+    }
+
+    /* Footer */
+    .footer__top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  /* ============================================
+     16. Poštovanje "prefers-reduced-motion"
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
+
+<!-- ============================================
+     HEADER / NAVIGACIJA
+     ============================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a href="#top" class="logo">OPG <span>Tomislav Antolčić</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Otvori izbornik">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Glavna navigacija">
+      <a href="#o-nama" class="primary-nav__link">O nama</a>
+      <a href="#proizvodi" class="primary-nav__link">Proizvodi</a>
+      <a href="#lokacija" class="primary-nav__link">Lokacija</a>
+      <a href="#kontakt" class="primary-nav__link">Kontakt</a>
+      <a href="#kontakt" class="btn btn--primary primary-nav__cta">Kontaktirajte nas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="top">
+    <div class="hero__content">
+      <span class="eyebrow">Obiteljski OPG · Velika Gorica</span>
+      <h1>Domaći proizvodi, izravno s našeg gospodarstva.</h1>
+      <p class="hero__lede">
+        OPG Pčelarstvo Tomislav Antolčić proizvodi domaći med i domaće
+        proizvode u Velikoj Gorici— bez posrednika, izravno od nas do vas.
+      </p>
+      <div class="hero__ctas">
+        <a href="#kontakt" class="btn btn--primary">Kontaktirajte nas</a>
+        <a href="#proizvodi" class="btn btn--outline">Pogledajte proizvode</a>
+      </div>
+    </div>
+    <div class="hero__media img-placeholder" role="img" aria-label="Fotografija maslinika i polja OPG-a Pčelarstvo Tomislav Antolčić">
+      <span>Fotografija OPG-a<br>(placeholder)</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       O NAMA
+       ============================================ -->
+  <section class="section" id="o-nama">
+    <div class="container about">
+      <div class="about__media img-placeholder" role="img" aria-label="Fotografija proizvodnje na OPG-u Pčelarstvo Tomislav Antolčić">
+        <span>Fotografija proizvodnje<br>(placeholder)</span>
+      </div>
+      <div class="about__text">
+        <span class="eyebrow">O nama</span>
+        <h2>Proizvodnja s pažnjom, izravno od nas do vas.</h2>
+        <p>
+          OPG Pčelarstvo Tomislav Antolčić bavi se proizvodnjom domaćih poljoprivrednih proizvoda u Velikoj
+          Gorici, u Zagrebačkoj županiji. Naš cilj je jednostavan — ponuditi kvalitetne,
+          domaće proizvode izravno kupcima, bez nepotrebnih posrednika.
+        </p>
+
+        <div class="about__facts">
+          <div class="fact">
+            <div class="fact__label">Lokacija</div>
+            <div class="fact__value">Velika Gorica, Zagrebačka županija</div>
+          </div>
+          <div class="fact">
+            <div class="fact__label">Djelatnost</div>
+            <div class="fact__value">Proizvodnja domaćih poljoprivrednih proizvoda</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROIZVODI
+       ============================================ -->
+  <section class="section section--alt" id="proizvodi">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Naši proizvodi</span>
+        <h2>Ono što uzgajamo i proizvodimo</h2>
+      </div>
+
+      <div class="product">
+        <div class="product__media img-placeholder" role="img" aria-label="Fotografija ekstra djevičanskog maslinovog ulja">
+          <span>Domaći med<br>(placeholder)</span>
+        </div>
+        <div class="product__text">
+          <span class="product__number">01</span>
+          <h3 class="product__title"> Domaći med</h3>
+          <p>Med proizveden na našem gospodarstvu, dostupan izravno od proizvođača.</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product__media img-placeholder" role="img" aria-label="Fotografija domaćeg meda">
+          <span>Propolis<br>(placeholder)</span>
+        </div>
+        <div class="product__text">
+          <span class="product__number">02</span>
+          <h3 class="product__title">Propolis</h3>
+          <p>Propolis proizveden na našem gospodarstvu, dostupan izravno od proizvođača.</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product__media img-placeholder" role="img" aria-label="Fotografija domaćih proizvoda OPG-a Pčelarstvo Tomislav Antolčić">
+          <span>Domaći proizvodi<br>(placeholder)</span>
+        </div>
+        <div class="product__text">
+          <span class="product__number">03</span>
+          <h3 class="product__title">Domaći proizvodi</h3>
+          <p>Uz med, nudimo i med s dodacima te med za poboljšanje imuniteta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ZAŠTO MI
+       ============================================ -->
+  <section class="section" id="zasto-mi">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Zašto OPG Pčelarstvo Tomislav Antolčić</span>
+        <h2>Izravno od proizvođača do vas</h2>
+      </div>
+
+      <div class="values">
+        <div class="value-item">
+          <h3 class="value-item__title">Domaća proizvodnja</h3>
+          <p>Naši proizvodi dolaze izravno s OPG-a u Velikoj Gorici, bez posrednika.</p>
+        </div>
+        <div class="value-item">
+          <h3 class="value-item__title">Direktan kontakt s proizvođačem</h3>
+          <p>Za sve upite i narudžbe možete nas kontaktirati izravno, telefonom ili emailom.</p>
+        </div>
+        <div class="value-item">
+          <h3 class="value-item__title">Lokalno gospodarstvo</h3>
+          <p>Smješteni smo u Zagrebačkoj županiji i dio smo lokalne poljoprivredne zajednice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LOKACIJA
+       ============================================ -->
+  <section class="section section--alt" id="lokacija">
+    <div class="container">
+      <span class="eyebrow">Gdje se nalazimo</span>
+      <h2>Velika Gorica, Zagrebačka županija</h2>
+      <p>Naše gospodarstvo nalazi se u Velikoj Gorici, u Zagrebačkoj županiji.</p>
+
+      <div class="location__map img-placeholder" role="img" aria-label="Karta lokacije OPG-a Pčelarstvo Tomislav Antolčić u Velikoj Gorici">
+        <span>Karta lokacije<br>(placeholder)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       KONTAKT
+       ============================================ -->
+  <section class="section" id="kontakt">
+    <div class="container contact">
+      <div class="contact-form-wrap">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Javite nam se</h2>
+        <p style="margin-bottom: 2rem;">
+          Za upite o proizvodima, narudžbe ili dodatne informacije, slobodno nas kontaktirajte.
+        </p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="name">Ime i prezime</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Poruka</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Pošaljite upit</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info__item">
+          <div class="fact__label">Telefon</div>
+          <a href="tel:+385991234567">+385 99 123 4567</a>
+        </div>
+        <div class="contact-info__item">
+          <div class="fact__label">Email</div>
+          <a href="mailto:domacimed.antolcic@gmail.com">domacimed.antolcic@gmail.com</a>
+        </div>
+        <div class="contact-info__item">
+          <div class="fact__label">Lokacija</div>
+          <div class="fact__value" style="font-family: var(--font-heading); font-size: 1.15rem;">
+            Velika Gorica, Zagrebačka županija
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#top" class="logo">OPG <span>Pčelarstvo Tomislav Antolčić</span></a>
+        <p>Domaći poljoprivredni proizvodi iz Velike Gorice, Zagrebačka županija.</p>
+      </div>
+
+      <div class="footer__contact">
+        <a href="tel:+385991234567">+385 99 123 4567</a>
+        <a href="mailto:domacimed.antolcic@gmail.com">domacimed.antolcic@gmail.com</a>
+        <span>Velika Gorica, Zagrebačka županija</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> OPG Pčelarstvo Tomislav Antolčić. Sva prava pridržana.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============================================
+  // JS #1 — Mobilni izbornik (otvaranje/zatvaranje)
+  // ============================================
+  const navToggle = document.getElementById('navToggle');
+  const primaryNav = document.getElementById('primaryNav');
+
+  navToggle.addEventListener('click', function () {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    primaryNav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-label', isOpen ? 'Otvori izbornik' : 'Zatvori izbornik');
+  });
+
+  // Zatvori izbornik kad korisnik klikne na link (mobile)
+  primaryNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Otvori izbornik');
+      primaryNav.classList.remove('is-open');
+    });
+  });
+
+  // ============================================
+  // JS #2 — Header dobiva pozadinu prilikom scrolla
+  // ============================================
+  const siteHeader = document.getElementById('siteHeader');
+
+  function updateHeaderOnScroll() {
+    if (window.scrollY > 10) {
+      siteHeader.classList.add('is-scrolled');
+    } else {
+      siteHeader.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeaderOnScroll);
+  updateHeaderOnScroll();
+
+  // ============================================
+  // JS #3 — Godina u footeru (automatski)
+  // ============================================
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ============================================
+  // JS #4 — Osnovna validacija kontakt forme
+  // (Napomena: forma trenutno ne šalje podatke nikamo —
+  // potrebno je povezati je s backendom ili servisom
+  // poput Formspree/EmailJS kada stranica ide u produkciju)
+  // ============================================
+  const contactForm = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      formNote.textContent = 'Molimo ispunite sva polja ispravno.';
+      formNote.style.color = '#B8862E';
+      return;
+    }
+
+    // Placeholder ponašanje dok forma nije spojena na pravi servis
+    formNote.textContent = 'Hvala! Ovo je demo forma — potrebno ju je povezati sa slanjem emaila.';
+    formNote.style.color = 'var(--color-primary)';
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>
