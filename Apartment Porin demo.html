@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartment Porin — Apartman u Velikoj Gorici</title>
+<meta name="description" content="Apartment Porin — prostran apartman s vrtom i terasom u Velikoj Gorici, samo nekoliko minuta od zagrebačke zračne luke. Ocjena gostiju 9.2/10.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Apartment Porin — Apartman u Velikoj Gorici">
+<meta property="og:description" content="Prostran apartman s vrtom i terasom, blizu zračne luke Zagreb. Provjerite dostupnost i rezervirajte svoj boravak.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiPgogIDxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9IiM4RjlBODIiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjcxIiBmaWxsPSIjRjZGM0VDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgVWxheiAvIGVrc3RlcmlqZXI8L3RleHQ+Cjwvc3ZnPg==">
+
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   KAMENA LUKA — stylesheet
+   Design tokens live at the top so a new client is mostly a
+   matter of swapping variables + images + CLIENT DATA in JS.
+   ========================================================== */
+
+:root {
+  /* ---- Colors ---- */
+  --c-bg:        #F6F3EC; /* limestone */
+  --c-bg-alt:    #EFE9DC; /* sand */
+  --c-ink:       #23342B; /* deep olive-pine */
+  --c-ink-soft:  #4C594F; /* muted ink for body copy */
+  --c-accent:    #B08D46; /* aged brass */
+  --c-accent-dk: #8F7136;
+  --c-line:      rgba(35, 52, 43, 0.14);
+  --c-surface:   #FFFFFF;
+
+  /* ---- Type ---- */
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ---- Layout ---- */
+  --max-w: 1180px;
+  --gutter: clamp(24px, 5vw, 64px);
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  color: var(--c-ink);
+  background: var(--c-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  line-height: 1.12;
+  margin: 0 0 0.5em;
+  color: var(--c-ink);
+}
+
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); font-weight: 500; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { margin: 0 0 1em; color: var(--c-ink-soft); }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--c-accent-dk);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--c-accent-dk);
+  font-weight: 500;
+  margin: 0 0 0.6em;
+}
+.eyebrow--light { color: #D8C79A; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  min-height: 48px;
+  border-radius: var(--radius);
+  font-family: var(--f-body);
+  font-size: 0.98rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn--primary {
+  background: var(--c-accent);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--c-accent-dk); }
+
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.12); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--c-ink);
+  border-color: var(--c-line);
+}
+.btn--outline:hover { border-color: var(--c-accent-dk); color: var(--c-accent-dk); }
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(246, 243, 236, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--c-line);
+}
+.nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 16px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__brand {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--c-ink);
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav__link {
+  text-decoration: none;
+  color: var(--c-ink-soft);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+.nav__link:hover { color: var(--c-ink); }
+.nav__link--cta {
+  color: #fff;
+  background: var(--c-accent);
+  padding: 9px 18px;
+  border-radius: var(--radius);
+}
+.nav__link--cta:hover { background: var(--c-accent-dk); color: #fff; }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav__toggle span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: var(--c-ink);
+  margin: 0 auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--c-ink);
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  animation: heroReveal 1.4s ease forwards;
+}
+@keyframes heroReveal {
+  to { opacity: 1; transform: scale(1); }
+}
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 26, 20, 0.72) 0%, rgba(20, 26, 20, 0.25) 45%, rgba(20, 26, 20, 0.15) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 72px;
+  width: 100%;
+  color: #fff;
+}
+.hero__location {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #E3DCC8;
+  margin-bottom: 0.4em;
+}
+.hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  color: #fff;
+  max-width: 12ch;
+}
+.hero__tagline {
+  font-size: 1.1rem;
+  color: #F0EDE3;
+  max-width: 40ch;
+  margin-bottom: 1.6em;
+}
+.hero__rating {
+  font-size: 0.92rem;
+  color: #E3DCC8;
+  margin-bottom: 1.8em;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================
+   OVERVIEW STRIP
+   ========================================================== */
+.overview {
+  background: var(--c-ink);
+  color: #fff;
+}
+.overview__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+.overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.overview__value {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+}
+.overview__label {
+  font-size: 0.85rem;
+  color: #C7CFC5;
+}
+
+/* ==========================================================
+   SHARED SECTION LAYOUT
+   ========================================================== */
+section { padding: 96px 0; }
+
+.about__inner,
+.why__inner,
+.units__inner,
+.amenities__inner,
+.gallery__inner,
+.location__inner,
+.booking__inner,
+.contact__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---- About ---- */
+.about__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about__media img { border-radius: var(--radius); }
+.about__content { max-width: 46ch; }
+
+/* ---- Why ---- */
+.why { background: var(--c-bg-alt); }
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 48px;
+  margin-top: 40px;
+}
+.why__item {
+  border-top: 1px solid var(--c-line);
+  padding-top: 18px;
+}
+.why__item p { margin: 0; }
+
+/* ---- Units ---- */
+.units__intro { max-width: 48ch; }
+.unit-card {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--c-surface);
+}
+.unit-card__media { min-height: 100%; background: var(--c-bg-alt); }
+.unit-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.unit-card__content { padding: 40px; display: flex; flex-direction: column; gap: 4px; }
+.unit-card__facts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 0.92rem;
+  color: var(--c-ink-soft);
+}
+.unit-card__facts li { position: relative; padding-left: 14px; }
+.unit-card__facts li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px;
+  width: 5px; height: 5px;
+  background: var(--c-accent);
+  border-radius: 50%;
+}
+.unit-card__content .btn { align-self: flex-start; margin-top: 12px; }
+
+/* ---- Amenities ---- */
+.amenities__grid {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px 24px;
+}
+.amenities__grid li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.96rem;
+  padding: 14px 0;
+  border-top: 1px solid var(--c-line);
+  color: var(--c-ink-soft);
+}
+.amenities__icon { color: var(--c-accent); font-size: 1rem; }
+
+/* ---- Gallery ---- */
+.gallery__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+  gap: 12px;
+}
+.gallery__item {
+  grid-row: var(--row, span 1);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--c-bg-alt);
+}
+.gallery__item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.gallery__item:hover img { transform: scale(1.05); }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 18, 15, 0.94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+.lightbox.is-open { display: flex; }
+.lightbox__img {
+  max-width: min(90vw, 1100px);
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox__close { top: 24px; right: 24px; }
+.lightbox__nav--prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.lightbox__nav--next { right: 24px; top: 50%; transform: translateY(-50%); }
+
+/* ---- Location ---- */
+.location__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.location__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.location__list li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--c-ink-soft);
+}
+.location__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 6px; height: 1px;
+  background: var(--c-accent);
+}
+.location__map iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* ---- Booking ---- */
+.booking {
+  background: var(--c-ink);
+  color: #fff;
+  text-align: center;
+}
+.booking h2 { color: #fff; }
+.booking__intro { color: #C7CFC5; max-width: 40ch; margin: 0 auto 32px; }
+.booking__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ---- Contact ---- */
+.contact__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+}
+.contact__list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact__list a {
+  text-decoration: none;
+  color: var(--c-ink);
+  font-weight: 500;
+}
+.contact__list a:hover { color: var(--c-accent-dk); }
+.contact__list span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--c-ink-soft);
+  margin-bottom: 2px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--c-surface);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-line);
+}
+.contact__form label {
+  font-size: 0.88rem;
+  color: var(--c-ink-soft);
+  margin-top: 12px;
+}
+.contact__form input,
+.contact__form textarea {
+  font-family: var(--f-body);
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  resize: vertical;
+}
+.contact__form input:focus,
+.contact__form textarea:focus {
+  border-color: var(--c-accent-dk);
+}
+.contact__form .btn { margin-top: 20px; align-self: flex-start; }
+.contact__form-note { margin-top: 14px; font-size: 0.9rem; color: var(--c-accent-dk); }
+
+/* ---- Footer ---- */
+.footer {
+  background: var(--c-bg-alt);
+  border-top: 1px solid var(--c-line);
+}
+.footer__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 48px var(--gutter);
+  text-align: center;
+}
+.footer__name { font-family: var(--f-display); font-size: 1.2rem; margin-bottom: 2px; }
+.footer__location { color: var(--c-ink-soft); font-size: 0.92rem; margin-bottom: 20px; }
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer__links a { text-decoration: none; color: var(--c-ink-soft); font-size: 0.92rem; }
+.footer__links a:hover { color: var(--c-accent-dk); }
+.footer__copy { font-size: 0.82rem; color: var(--c-ink-soft); margin: 0; }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 960px) {
+  .about__inner,
+  .location__inner,
+  .contact__inner { grid-template-columns: 1fr; }
+  .about__media { order: -1; }
+  .why__grid { grid-template-columns: repeat(2, 1fr); }
+  .amenities__grid { grid-template-columns: repeat(3, 1fr); }
+  .overview__inner { grid-template-columns: repeat(3, 1fr); row-gap: 28px; }
+  .unit-card { grid-template-columns: 1fr; }
+  .unit-card__media { min-height: 260px; }
+  .gallery__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .nav__links {
+    position: fixed;
+    inset: 0;
+    top: 65px;
+    background: var(--c-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px var(--gutter);
+    gap: 22px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .nav__links.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav__link { font-size: 1.1rem; }
+  .nav__link--cta { order: -1; }
+  .nav__toggle { display: flex; }
+
+  .hero { min-height: 100vh; align-items: flex-end; }
+  .hero__content { padding-bottom: 48px; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn { width: 100%; }
+
+  .overview__inner { grid-template-columns: repeat(2, 1fr); }
+
+  section { padding: 64px 0; }
+
+  .why__grid { grid-template-columns: 1fr; gap: 28px; }
+  .amenities__grid { grid-template-columns: repeat(2, 1fr); }
+
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+  .gallery__item { grid-row: span 1 !important; }
+
+  .location__map iframe { height: 280px; }
+
+  .booking__actions { flex-direction: column; align-items: stretch; }
+  .booking__actions .btn { width: 100%; }
+
+  .contact__form { padding: 24px; }
+
+  .lightbox__nav { width: 40px; height: 40px; }
+  .lightbox__close { width: 40px; height: 40px; top: 16px; right: 16px; }
+}
+
+@media (max-width: 420px) {
+  .overview__inner { grid-template-columns: repeat(2, 1fr); }
+  .amenities__grid { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGACIJA ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#pocetna" class="nav__brand">Porin</a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#pocetna" class="nav__link">Početna</a>
+      <a href="#o-objektu" class="nav__link">O objektu</a>
+      <a href="#smjestaj" class="nav__link">Smještaj</a>
+      <a href="#galerija" class="nav__link">Galerija</a>
+      <a href="#lokacija" class="nav__link">Lokacija</a>
+      <a href="#kontakt" class="nav__link">Kontakt</a>
+      <a href="#rezervacija" class="nav__link nav__link--cta">Rezervirajte</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="pocetna">
+  <div class="hero__media">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiPgogIDxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9IiM4RjlBODIiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjcxIiBmaWxsPSIjRjZGM0VDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgVWxheiAvIGVrc3RlcmlqZXI8L3RleHQ+Cjwvc3ZnPg==" alt="Pogled na vilu Kamena Luka i more u pozadini" class="hero__img" id="heroImg">
+  </div>
+  <div class="hero__content">
+    <p class="hero__location">Velika Gorica, Hrvatska</p>
+    <h1 class="hero__title">Apartment<br>Porin</h1>
+    <p class="hero__tagline">Prostran apartman s vrtom i terasom, minutama od zagrebačke zračne luke.</p>
+    <p class="hero__rating">★ 9.2/10 — Wonderful · 85 recenzija na Bookingu</p>
+    <div class="hero__actions">
+      <a href="#rezervacija" class="btn btn--primary">Rezervirajte svoj boravak</a>
+      <a href="#smjestaj" class="btn btn--ghost">Pogledajte smještaj</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KRATKI PREGLED ============ -->
+<section class="overview" aria-label="Osnovne informacije o objektu">
+  <div class="overview__inner">
+    <div class="overview__item">
+      <span class="overview__value">4</span>
+      <span class="overview__label">gosta</span>
+    </div>
+    <div class="overview__item">
+      <span class="overview__value">2</span>
+      <span class="overview__label">spavaće sobe</span>
+    </div>
+    <div class="overview__item">
+      <span class="overview__value">1</span>
+      <span class="overview__label">kupaonica</span>
+    </div>
+    <div class="overview__item">
+      <span class="overview__value">64 m²</span>
+      <span class="overview__label">unutarnji prostor</span>
+    </div>
+    <div class="overview__item">
+      <span class="overview__value">✓</span>
+      <span class="overview__label">vrt i terasa</span>
+    </div>
+    <div class="overview__item">
+      <span class="overview__value">✓</span>
+      <span class="overview__label">besplatan parking</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O OBJEKTU ============ -->
+<section class="about" id="o-objektu">
+  <div class="about__inner">
+    <div class="about__media">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNzAwIiB2aWV3Qm94PSIwIDAgOTAwIDcwMCI+CiAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IiNDOUJGQTYiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjUwIiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgRG5ldm5pIGJvcmF2YWs8L3RleHQ+Cjwvc3ZnPg==" alt="Dnevni boravak apartmana Porin" loading="lazy">
+    </div>
+    <div class="about__content">
+      <p class="eyebrow">O objektu</p>
+      <h2>Prostran mir, blizu svega</h2>
+      <p>Apartment Porin nalazi se u mirnoj ulici Velike Gorice, s pogledom na unutarnje dvorište i vlastitim ulazom odvojenim od ostatka zgrade. Cijeli prostor od 64 m² iznajmljuje se isključivo vama.</p>
+      <p>Gosti posebno ističu jednostavnu prijavu, čistoću i udobnost prostora — apartman trenutno ima ocjenu 9.2/10 ("Wonderful") na temelju 85 recenzija na Bookingu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZAŠTO ODABRATI ============ -->
+<section class="why">
+  <div class="why__inner">
+    <p class="eyebrow">Prednosti</p>
+    <h2>Zašto odabrati Apartment Porin?</h2>
+    <div class="why__grid">
+      <div class="why__item">
+        <h3>Blizina zračne luke</h3>
+        <p>Svega nekoliko minuta vožnje od zagrebačke zračne luke Franjo Tuđman — idealno za rane letove ili poslovni put.</p>
+      </div>
+      <div class="why__item">
+        <h3>Vrt i terasa</h3>
+        <p>Vanjski prostor s pogledom na unutarnje dvorište za opuštanje nakon puta.</p>
+      </div>
+      <div class="why__item">
+        <h3>Besplatan privatni parking</h3>
+        <p>Parking na samom mjestu, uključen u cijenu boravka.</p>
+      </div>
+      <div class="why__item">
+        <h3>Brz Wi-Fi</h3>
+        <p>Besplatan internet brzine do 100 Mbps, pogodan i za rad na daljinu.</p>
+      </div>
+      <div class="why__item">
+        <h3>Idealno za obitelji</h3>
+        <p>Dvije spavaće sobe i odvojen, nepušački prostor pogodan za obiteljski boravak.</p>
+      </div>
+      <div class="why__item">
+        <h3>Visoke ocjene gostiju</h3>
+        <p>9.2/10 na Bookingu — gosti posebno hvale čistoću, udobnost i jednostavnu prijavu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SMJEŠTAJ ============ -->
+<section class="units" id="smjestaj">
+  <div class="units__inner">
+    <p class="eyebrow">Smještaj</p>
+    <h2>Cijeli apartman, za vas same</h2>
+    <p class="units__intro">Apartment Porin iznajmljuje se u cijelosti — nema dijeljenja prostora s drugim gostima.</p>
+
+    <div class="unit-card">
+      <div class="unit-card__media">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNzAwIiB2aWV3Qm94PSIwIDAgOTAwIDcwMCI+CiAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IiNCN0FFOTUiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjUwIiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgU3BhdmHEh2Egc29iYSAoYnJhxI1uaSBrcmV2ZXQpPC90ZXh0Pgo8L3N2Zz4=" alt="Spavaća soba s bračnim krevetom u apartmanu Porin" loading="lazy">
+      </div>
+      <div class="unit-card__content">
+        <h3>Apartment Porin</h3>
+        <ul class="unit-card__facts">
+          <li>Do 4 gosta</li>
+          <li>2 spavaće sobe</li>
+          <li>1 kupaonica</li>
+          <li>64 m² · vrt i terasa</li>
+        </ul>
+        <p>Prva spavaća soba ima bračni krevet velikih dimenzija, druga sobu s krevetom na razvlačenje. Dnevni boravak s blagovaonicom i potpuno opremljenom kuhinjom, uz izlaz na terasu s pogledom na unutarnje dvorište.</p>
+        <a href="#rezervacija" class="btn btn--outline">Provjerite dostupnost</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SADRŽAJI ============ -->
+<section class="amenities">
+  <div class="amenities__inner">
+    <p class="eyebrow">Sadržaji</p>
+    <h2>Sve što vam treba za opušten boravak</h2>
+    <ul class="amenities__grid">
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Besplatan Wi-Fi (do 100 Mbps)</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Klima uređaj</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Besplatan privatni parking</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Potpuno opremljena kuhinja</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Blagovaonica</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>TV</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Vrt</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Terasa / patio</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Radni stol</li>
+      <li><span class="amenities__icon" aria-hidden="true">◇</span>Posteljina i ručnici</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ GALERIJA ============ -->
+<section class="gallery" id="galerija">
+  <div class="gallery__inner">
+    <p class="eyebrow">Galerija</p>
+    <h2>Pogledajte kako izgleda</h2>
+
+    <div class="gallery__grid" id="galleryGrid">
+      <button class="gallery__item" data-index="0" style="--row:span 2;">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiM4RjlBODIiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjU3IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgVWxheiAvIGVrc3RlcmlqZXI8L3RleHQ+Cjwvc3ZnPg==" alt="Ulaz i eksterijer apartmana Porin" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="1">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNDOUJGQTYiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgRG5ldm5pIGJvcmF2YWs8L3RleHQ+Cjwvc3ZnPg==" alt="Dnevni boravak s blagovaonicom" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="2">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNCN0FFOTUiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgU3BhdmHEh2Egc29iYSAxPC90ZXh0Pgo8L3N2Zz4=" alt="Spavaća soba s bračnim krevetom" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="3">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNBOUI3QTIiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgS3VwYW9uaWNhPC90ZXh0Pgo8L3N2Zz4=" alt="Kupaonica" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="4" style="--row:span 2;">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiM3QzhCN0EiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjU3IiBmaWxsPSIjRjZGM0VDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgVGVyYXNhIC8gZHZvcmnFoXRlPC90ZXh0Pgo8L3N2Zz4=" alt="Terasa s pogledom na unutarnje dvorište" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNEOENCQTgiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgS3VoaW5qYTwvdGV4dD4KPC9zdmc+" alt="Potpuno opremljena kuhinja" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="6">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM2RThDOEYiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjRjZGM0VDIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgU3BhdmHEh2Egc29iYSAyPC90ZXh0Pgo8L3N2Zz4=" alt="Druga spavaća soba" loading="lazy">
+      </button>
+      <button class="gallery__item" data-index="7">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM5RkFBOEMiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjMjMzNDJCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5QTEFDRUhPTERFUiDigJQgVnJ0PC90ZXh0Pgo8L3N2Zz4=" alt="Vrt apartmana Porin" loading="lazy">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pregled fotografije">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Zatvori">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Prethodna fotografija">‹</button>
+  <img src="" alt="" class="lightbox__img" id="lightboxImg">
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Sljedeća fotografija">›</button>
+</div>
+
+<!-- ============ LOKACIJA ============ -->
+<section class="location" id="lokacija">
+  <div class="location__inner">
+    <div class="location__content">
+      <p class="eyebrow">Lokacija</p>
+      <h2>Velika Gorica, Hrvatska</h2>
+      <p>Apartman se nalazi na adresi 38 Ulica Kneza Porina, u mirnom dijelu Velike Gorice, gradića uz Zagreb poznatog po blizini zračne luke i lakoj povezanosti s glavnim gradom.</p>
+      <ul class="location__list">
+        <li>~4 km do zračne luke Zagreb (Franjo Tuđman)</li>
+        <li>~12 km do Muzeja suvremene umjetnosti u Zagrebu</li>
+        <li>~14 km do Arene Zagreb</li>
+        <li>~15 km do Botaničkog vrta u Zagrebu</li>
+      </ul>
+      <a href="https://www.google.com/maps/search/?api=1&query=38+Ulica+Kneza+Porina+Velika+Gorica" target="_blank" rel="noopener" class="btn btn--outline">Otvorite lokaciju na Google Maps</a>
+    </div>
+    <div class="location__map">
+      <iframe
+        title="Karta lokacije objekta"
+        src="https://www.google.com/maps?q=38+Ulica+Kneza+Porina%2C+10410+Velika+Gorica%2C+Croatia&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REZERVACIJA ============ -->
+<section class="booking" id="rezervacija">
+  <div class="booking__inner">
+    <p class="eyebrow eyebrow--light">Rezervacija</p>
+    <h2>Rezervirajte svoj boravak</h2>
+    <p class="booking__intro">Provjerite dostupnost i cijene izravno na Bookingu.</p>
+    <div class="booking__actions" id="bookingActions">
+      <!-- gumbi se generiraju dinamički iz script.js prema CLIENT DATA -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="contact" id="kontakt">
+  <div class="contact__inner">
+    <div class="contact__info">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Imate pitanje?</h2>
+      <p>Javite nam se izravno — rado ćemo odgovoriti na sva pitanja o smještaju i dostupnosti.</p>
+      <ul class="contact__list" id="contactList">
+        <!-- popunjava se iz CLIENT DATA -->
+      </ul>
+    </div>
+    <form class="contact__form" id="contactForm">
+      <label for="name">Ime i prezime</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Poruka</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn btn--primary">Pošaljite upit</button>
+      <p class="contact__form-note" id="contactFormNote" hidden>Hvala! Vaša poruka je pripremljena — otvorit će se vaš email klijent.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">Apartment Porin</p>
+      <p class="footer__location">Velika Gorica, Hrvatska</p>
+    </div>
+    <ul class="footer__links" id="footerLinks">
+      <!-- popunjava se iz CLIENT DATA -->
+    </ul>
+    <p class="footer__copy">© 2026 Apartment Porin. Sva prava pridržana.</p>
+  </div>
+</footer>
+
+<script>
+// ==========================================================
+// CLIENT DATA
+// Sve podatke koji se najčešće mijenjaju za novog klijenta
+// mijenjajte ovdje. Ostatak datoteke ne treba dirati.
+// ==========================================================
+const CLIENT = {
+  name: "Apartment Porin",
+
+  // Rezervacijski kanali — ostavite prazan string ("") za kanal
+  // koji klijent NE koristi. Prazan gumb se automatski ne prikazuje.
+  // Booking link je preuzet izravno s klijentove stranice na Bookingu.
+  bookingUrl: "https://www.booking.com/hotel/hr/apartment-porin-velika-gorica.hr.html?aid=318615&label=Croatian_Croatia_HR_HR_29562109825-k5Bmhaz8VAgO4diVZk95TwS821419282483%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55758863747%3Atikwl-300321453740%3Alp9197245%3Ali%3Adec%3Adm%3Aag29562109825%3Acmp400536385&sid=cad1bcb306af83d6a0b0c6e289f5c5a3&dest_id=-99547&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1789563764&srpvid=af3e5bb50977040f&type=total&ucfs=1&",
+  airbnbUrl: "",                                 // klijent trenutno nema javno dostupan Airbnb oglas — dopunite ako postoji
+  vrboUrl: "",
+  directBooking: false,                          // nema potvrđenog izravnog kanala; uključite kad klijent dostavi kontakt za upite
+
+  // Kontakt — Booking oglas ne otkriva javno vlasnikov telefon/email,
+  // pa su ostavljeni kao placeholderi dok klijent ne dostavi stvarne podatke.
+  // Placeholderi u uglatim zagradama automatski se prikazuju kao obični tekst (ne kao link).
+  phone: "[TELEFON]",
+  email: "[EMAIL]",
+  whatsapp: "",
+  address: "38 Ulica Kneza Porina, 10410 Velika Gorica, Hrvatska",
+  hours: "Prijava (check-in): 14:00–23:30 · Odjava (check-out): do 10:00",
+
+  // Društvene mreže — prazan string za onu koju klijent ne koristi
+  instagram: "",
+  facebook: "",
+};
+
+// ==========================================================
+// Ne treba mijenjati ispod ove linije
+// ==========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  initNav();
+  initBookingButtons();
+  initContactAndFooter();
+  initGallery();
+  initContactForm();
+});
+
+/* ---------- Navigacija ---------- */
+function initNav() {
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (!toggle || !links) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = links.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  links.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+/* ---------- Booking gumbi (uvjetno, prema CLIENT DATA) ---------- */
+function initBookingButtons() {
+  const container = document.getElementById("bookingActions");
+  if (!container) return;
+
+  const buttons = [];
+
+  if (CLIENT.bookingUrl) {
+    buttons.push({ label: "Rezervirajte na Bookingu", href: CLIENT.bookingUrl, style: "btn--primary" });
+  }
+  if (CLIENT.airbnbUrl) {
+    buttons.push({ label: "Rezervirajte na Airbnbju", href: CLIENT.airbnbUrl, style: "btn--ghost" });
+  }
+  if (CLIENT.vrboUrl) {
+    buttons.push({ label: "Rezervirajte na Vrbu", href: CLIENT.vrboUrl, style: "btn--ghost" });
+  }
+  if (CLIENT.directBooking) {
+    buttons.push({ label: "Pošaljite upit", href: "#kontakt", style: "btn--ghost" });
+  }
+  if (CLIENT.whatsapp) {
+    buttons.push({ label: "Pišite nam na WhatsApp", href: CLIENT.whatsapp, style: "btn--ghost" });
+  }
+
+  container.innerHTML = buttons
+    .map(
+      (b) =>
+        `<a class="btn ${b.style}" href="${b.href}" ${b.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>${b.label}</a>`
+    )
+    .join("");
+}
+
+/* ---------- Kontakt lista + footer linkovi ---------- */
+function initContactAndFooter() {
+  const contactList = document.getElementById("contactList");
+  if (contactList) {
+    const isPlaceholder = (v) => v.startsWith("[") && v.endsWith("]");
+
+    const items = [];
+    if (CLIENT.phone) {
+      items.push(
+        isPlaceholder(CLIENT.phone)
+          ? `<li><span>Telefon</span>${CLIENT.phone} <em>(dopunite stvarni broj)</em></li>`
+          : `<li><span>Telefon</span><a href="tel:${CLIENT.phone.replace(/\s+/g, "")}">${CLIENT.phone}</a></li>`
+      );
+    }
+    if (CLIENT.email) {
+      items.push(
+        isPlaceholder(CLIENT.email)
+          ? `<li><span>Email</span>${CLIENT.email} <em>(dopunite stvarnu adresu)</em></li>`
+          : `<li><span>Email</span><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>`
+      );
+    }
+    if (CLIENT.whatsapp) {
+      items.push(`<li><span>WhatsApp</span><a href="${CLIENT.whatsapp}" target="_blank" rel="noopener">Otvorite razgovor</a></li>`);
+    }
+    if (CLIENT.address) {
+      items.push(`<li><span>Adresa</span>${CLIENT.address}</li>`);
+    }
+    if (CLIENT.hours) {
+      items.push(`<li><span>Radno vrijeme</span>${CLIENT.hours}</li>`);
+    }
+    contactList.innerHTML = items.join("");
+  }
+
+  const footerLinks = document.getElementById("footerLinks");
+  if (footerLinks) {
+    const items = [];
+    if (CLIENT.bookingUrl) items.push(`<li><a href="${CLIENT.bookingUrl}" target="_blank" rel="noopener">Booking</a></li>`);
+    if (CLIENT.airbnbUrl) items.push(`<li><a href="${CLIENT.airbnbUrl}" target="_blank" rel="noopener">Airbnb</a></li>`);
+    if (CLIENT.instagram) items.push(`<li><a href="${CLIENT.instagram}" target="_blank" rel="noopener">Instagram</a></li>`);
+    if (CLIENT.facebook) items.push(`<li><a href="${CLIENT.facebook}" target="_blank" rel="noopener">Facebook</a></li>`);
+    if (CLIENT.email) items.push(`<li><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>`);
+    footerLinks.innerHTML = items.join("");
+  }
+}
+
+/* ---------- Galerija + lightbox ---------- */
+function initGallery() {
+  const items = Array.from(document.querySelectorAll(".gallery__item"));
+  if (!items.length) return;
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const btnClose = document.getElementById("lightboxClose");
+  const btnPrev = document.getElementById("lightboxPrev");
+  const btnNext = document.getElementById("lightboxNext");
+
+  let currentIndex = 0;
+
+  function openAt(index) {
+    currentIndex = index;
+    const img = items[currentIndex].querySelector("img");
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    btnClose.focus();
+  }
+
+  function close() {
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  function show(delta) {
+    currentIndex = (currentIndex + delta + items.length) % items.length;
+    const img = items[currentIndex].querySelector("img");
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener("click", () => openAt(index));
+  });
+
+  btnClose.addEventListener("click", close);
+  btnPrev.addEventListener("click", () => show(-1));
+  btnNext.addEventListener("click", () => show(1));
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(-1);
+    if (e.key === "ArrowRight") show(1);
+  });
+}
+
+/* ---------- Kontakt forma ---------- */
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const note = document.getElementById("contactFormNote");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    const subject = encodeURIComponent(`Upit za ${CLIENT.name}`);
+    const body = encodeURIComponent(`Ime: ${name}\nEmail: ${email}\n\n${message}`);
+
+    if (CLIENT.email && !(CLIENT.email.startsWith("[") && CLIENT.email.endsWith("]"))) {
+      window.location.href = `mailto:${CLIENT.email}?subject=${subject}&body=${body}`;
+    }
+
+    if (note) note.hidden = false;
+    form.reset();
+  });
+}
+
+</script>
+</body>
+</html>
